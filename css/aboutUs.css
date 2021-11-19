@@ -1,0 +1,48 @@
+.artTextSmall {
+	font-size: 1.2vw;
+	font-style: italic;
+	font-weight: var(--fontExtraThin);
+	padding-right: 0.8vw;
+}
+
+@media (min-width: 1300px) {
+	.artTopMetaPic {
+		height: 450px;
+		overflow-y: hidden;
+	}
+
+	.artText {
+		font-size: 1.3em;
+	}
+
+	.artTextSmall {
+		font-size: 1em;
+		padding-right: 20px;
+	}
+
+	.artFirst {
+		font-size: 1.2em;
+		font-weight: var(--fontMedium);
+	}
+
+	.artLeftMeta {
+		flex-basis: 50%;
+	}
+
+	.artSharpEdge {
+		width: 0;
+		height: 0;
+		border-right: 10vw solid transparent;
+		border-top: 35vw solid var(--darkGrey);
+	}
+}
+
+@media (max-width: 900px) {
+	.artTextSmall {
+		font-size: 2.8vw;
+	}
+
+	.artText {
+		padding-bottom: 0px;
+	}
+}

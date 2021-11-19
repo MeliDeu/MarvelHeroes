@@ -1,0 +1,372 @@
+body {
+	margin: 0;
+	padding: 0;
+	/* width: 100vw; */
+	width: 100%;
+}
+
+.artMain {
+	background-color: var(--darkGrey);
+	width: 100%;
+	overflow-x: hidden;
+}
+
+/*KOD FÖR ÖVRE DELEN AV SIDAN!!!!*/
+/*Kod för top delen*/
+.artTopMetaPic {
+	/* width: 100vw; */
+	width: 100%;
+	height: 30vw;
+	font-family: var(--fontF);
+
+	display: flex;
+	justify-content: center;
+}
+
+.artLeftMeta {
+	flex-basis: 64%;
+	/* height: 100%; */
+	height: calc(100% - 3vw);
+	padding: 3vw 0 0 3vw;
+}
+
+.artText {
+	font-family: var(--fontF);
+	color: var(--fontC);
+}
+
+/*Rubrik för topp*/
+.artTextCap {
+	color: var(--fontC);
+	text-transform: uppercase;
+	width: 100%;
+	font-size: var(--captionFontS);
+	padding-bottom: 3vw;
+	font-weight: var(--fontThick);
+}
+
+.artRightPic {
+	width: 49%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+}
+
+.artSharpEdge {
+	width: 0;
+	height: 0;
+	border-right: 10vw solid transparent;
+	border-top: 30vw solid var(--darkGrey);
+}
+
+#artSharpSecond {
+	border-left: 10vw solid transparent;
+	border-top: var(--artHeightTop) solid var(--darkGrey);
+}
+
+.artStandigHero {
+	width: 100%;
+	background-position: center left top;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.artTextMeta {
+	display: flex;
+	flex-flow: row wrap;
+
+	text-align: left;
+}
+
+.artFirst {
+	font-size: var(--captionMetaS);
+	flex-grow: 2;
+	flex-basis: 15vw;
+	padding-bottom: 5%;
+	font-weight: var(--fontMedium);
+	margin-right: 3%;
+}
+
+.artSec {
+	height: 20px;
+	font-size: var(--textMetaS);
+	font-weight: var(--fontThin);
+}
+
+/*KOD FÖR NEDRE DELEN AV SIDAN!!!!*/
+#artBotText {
+	/*behöver vi har height*/
+	display: flex;
+	flex-direction: row;
+	/* padding: 4vw 3vw; */
+	padding: 4vw 0;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.artBotTextFlex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-basis: 1px;
+	flex-grow: 1;
+}
+
+.artTextBox {
+	/* width: 50%; */
+	flex-basis: 88%;
+	height: 60vw;
+
+	display: grid;
+	grid-template-columns: 0.3fr 0.06fr 2fr 0.06fr 0.3fr;
+	grid-template-rows: 0.01fr 10vw 10vw 0.09fr 0fr 0.7fr 0.1fr;
+}
+
+
+.artPic {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	grid-area: 2/3/4/4;
+}
+
+.artTextBgTop {
+	background-color: var(--darkGrey);
+	grid-area: 1/2/3/5;
+}
+
+.artTextBgBot {
+	background-color: var(--textBg);
+	grid-area: 3/1/8/6;
+}
+
+.artUnderPic {
+	color: var(--fontC);
+	font-family: var(--fontF);
+	font-size: var(--textForPic);
+	grid-area: 4/3/5/4;
+}
+
+.artText {
+	color: var(--fontC);
+	font-family: var(--fontF);
+	font-size: var(--textMetaS);
+	grid-area: 6/2/7/5;
+	font-weight: var(--fontExtraThin);
+
+}
+
+.artDescr {
+	color: var(--fontC);
+	font-family: var(--fontF);
+	font-size: var(--textForPic);
+	grid-area: 7/2/8/5;
+	width: -webkit-max-content;
+	width: -moz-max-content;
+	width: max-content;
+}
+
+.artLeftMeta>.artTextCap {
+	display: block;
+}
+
+.artRightPic>.artTextCap {
+	display: none;
+}
+
+
+/*RESPONSIVT!!!!!!!!!!!!*/
+@media (max-width: 900px) {
+
+	/*RESPONSIV ARTIKEL*/
+	.artTopMetaPic {
+		flex-direction: column-reverse;
+		height: 90vw;
+	}
+
+	.aboutUsMeta {
+		height: 95vw;
+	}
+
+	.artRightPic {
+		width: 100%;
+		height: 120vh;
+	}
+
+	.artStandigHero {
+		background-position: top right;
+		background-size: cover;
+	}
+
+	.artSharpEdge {
+		display: none;
+	}
+
+	.artLeftMeta {
+		padding: 5vw;
+		width: auto;
+		flex-basis: 40%;
+	}
+
+	.artTextMeta {
+		display: flex;
+		align-items: center;
+		width: 80vw;
+	}
+
+	.artFirst {
+		font-size: var(--artRespTextMeta);
+		width: calc(80vw/2);
+		margin-right: 0;
+	}
+
+	.artSec {
+		font-size: var(--artRespTextSmall);
+		width: calc(80vw/2);
+	}
+
+	.artTextCap {
+		font-size: var(--artRespTextCap);
+		position: relative;
+		width: auto;
+		font-size: 8vw;
+	}
+
+	.artUnderPic {
+		font-size: var(--artRespTextSource);
+		padding-top: 6px;
+	}
+
+	#artBotText {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.artTextBox {
+		width: 100vw;
+		height: auto;
+		padding-bottom: 8vw;
+		grid-template-columns: 2fr 0fr 80vw 0fr 2fr;
+		grid-template-rows: 0fr 20vw 20vw 7vw 0fr 0.7fr 5vw;
+	}
+
+	#artFirstTextBox {
+		margin-right: 0px;
+	}
+
+	.artText {
+		font-size: var(--artRespTextForPic);
+		padding-bottom: 20px;
+	}
+
+	/*denna hör ju till om oss, se om det räcker*/
+	#artSharpSecond {
+		display: none;
+	}
+
+	.artDescr {
+		font-size: var(--artRespTextSource);
+	}
+
+	#middleBox {
+		flex-direction: column;
+	}
+
+	.artRightPic>.artTextCap {
+		display: flex;
+		padding: 8vw 0 0 10vw;
+	}
+
+	.artLeftMeta>.artTextCap {
+		display: none;
+	}
+}
+
+@media (min-width: 1300px) {
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		background-color: var(--bodyFluidBg);
+	}
+
+	.artMain {
+		width: 1300px;
+	}
+
+	.artTopMetaPic {
+		width: 1300px;
+	}
+
+	.artUnderPic {
+		font-size: 13px;
+		padding-top: 5px;
+	}
+
+	.artTextBox {
+		grid-template-columns: 2vw 0.4vw 35vw 0.4vw 2vw;
+		grid-template-rows: 0.4vw 10vw 10vw 0.09fr 0fr 0.7fr 0.1fr;
+		max-height: 784px;
+	}
+
+	/* .artFirst {
+      font-size: 100%;
+   } */
+
+	.artTopMetaPic {
+		height: 390px;
+	}
+
+	/* ---------------------------------------------------- Ändrat20200525 */
+	.artLeftMeta {
+		flex-basis: 48%;
+		height: calc(100% - 6%);
+		padding: 2% 0 0 3%;
+	}
+
+	.artTextCap {
+		font-size: 3em;
+		padding-bottom: 8%;
+	}
+
+	.artFirst {
+		font-size: 1.5em;
+		flex-basis: 29%;
+		padding-bottom: 8%;
+		margin-right: 2%;
+		flex-grow: 1;
+	}
+
+	.artSec {
+		font-size: .7em;
+		font-weight: var(--fontThin);
+	}
+
+	#artBotText {
+		padding: 6% 0;
+	}
+
+	.artTextBox {
+		grid-template-columns: 40px 10px 485px 10px 40px;
+		grid-template-rows: 10px 150px 150px 68px 0fr auto 56px;
+		/* height: 100vh; */
+	}
+
+	.artText {
+		font-size: 1em;
+		line-height: 17pt;
+		font-weight: 300;
+	}
+
+	.artDescr {
+		font-size: 1em;
+	}
+
+	/* ---------------------------------------------------- Ändrat20200525 */
+
+}

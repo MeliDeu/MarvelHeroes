@@ -1,0 +1,471 @@
+* {
+  margin: 0;
+  font-family: var(--fontF);
+}
+
+body {
+  background-color: var(--bodyFluidBg);
+}
+
+#qWrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+#qTop {
+  height: 20vh;
+  display: flex;
+  background-image: -webkit-linear-gradient(30deg, var(--darkGrey) 50%, var(--fontC) 50%);
+}
+
+.qCCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.qCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qInfo {
+  height: 100%;
+  flex-basis: 55%;
+}
+
+#qInfoBox {
+  width: 40vw;
+  max-width: 425px;
+  color: var(--fontC);
+  font-size: var(--smallFont);
+  font-weight: var(--fontExtraThin);
+}
+
+.qTitle {
+  font-weight: var(--fontExtraThick);
+  font-size: var(--bigFont);
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.qTitle img {
+  height: 40px;
+  margin: 0 5px;
+  align-self: center;
+}
+
+.qScoreBox {
+  height: 100%;
+  flex-grow: 1;
+  color: var(--black);
+  font-weight: var(--fontExtraThick);
+  font-size: var(--smallTitle);
+}
+
+.qScoreBoxTitle {
+  font-size: var(--mediumFont);
+  font-weight: var(--fontExtraThick);
+  width: 400px;
+  text-align: center;
+}
+
+.qScoreBoxGrid {
+  margin-top: 12px;
+  width: 400px;
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr 1fr;
+  grid-auto-rows: 1fr;
+}
+
+.qPlace1 {
+  grid-area: 2/1/3/2;
+  text-align: center;
+}
+
+.qPlace2 {
+  grid-area: 3/1/4/2;
+  text-align: center;
+}
+
+.qPlace3 {
+  grid-area: 4/1/5/2;
+  text-align: center;
+}
+
+.qTitle0 {
+  grid-area: 1/2/2/3;
+  text-align: center;
+}
+
+.qTitle1 {
+  grid-area: 1/3/2/4;
+  text-align: center;
+}
+
+.qTitle2 {
+  grid-area: 1/4/2/5;
+  text-align: center;
+}
+
+.qHsRow0 {
+  grid-area: 2/2/3/5;
+}
+
+.qHsRow1 {
+  grid-area: 3/2/4/5;
+}
+
+.qHsRow2 {
+  grid-area: 4/2/5/5;
+}
+
+.qScoreDiv {
+  grid-area: 2/2/5/3;
+}
+
+.qHsDetails div {
+  margin: 2px 0;
+}
+
+.qNameDiv {
+  grid-area: 2/3/5/4;
+}
+
+.qDateDiv {
+  grid-area: 2/4/5/5;
+}
+
+.qHsDetails {
+  text-align: center;
+  font-size: var(--smallFont);
+  font-weight: var(--fontThin);
+  display: grid;
+}
+
+.qCountContainer {
+  height: 5vh;
+  background-color: var(--red);
+  color: var(--fontC);
+}
+
+.qCountBox {
+  flex-basis: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--fontThin);
+  font-size: var(--mediumTitle);
+}
+
+.qCount {
+  display: flex;
+  flex-basis: 1px;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.qCountScoreBox {
+  justify-content: flex-start;
+}
+
+.qMargin {
+  margin-right: 5px;
+}
+
+.qCountTimeBox {
+  font-size: var(--timeFont);
+  font-weight: var(--fontThick);
+  justify-content: center;
+}
+
+.qCountQueBox {
+  justify-content: flex-end;
+}
+
+.qQuizContainer {
+  width: 100%;
+  height: 45vh;
+  display: flex;
+}
+
+#qQuizInfoBox {
+  flex-basis: 60vw;
+  max-width: 780px;
+  height: 100%;
+  background-color: var(--grey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.qQuestion {
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  font-size: var(--questionFont);
+  font-weight: var(--fontExtraThick);
+}
+
+#qQuizBox {
+  width: 80%;
+  max-width: 500px;
+  margin: 0px 0 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 60px;
+  grid-gap: 30px;
+}
+
+.qAnswer {
+  text-align: center;
+  background-color: var(--darkGrey);
+  color: var(--fontC);
+  font-weight: var(--fontMedium);
+  font-size: var(--answerFont);
+  border: 3px solid var(--mediumGrey);
+  /*transition: background-color.6s, color .6s;*/
+}
+
+.qAnswer:hover {
+  cursor: pointer;
+}
+
+.qAnswerHover {
+  transition: background-color .5s, color .5s;
+  background-color: var(--fontC);
+  color: var(--darkGrey)
+}
+
+.qAnsHover {
+  background-color: var(--fontC);
+  color: var(--darkGrey);
+  transition: background-color.6s, color .6s;
+}
+
+.qNextBox {
+  width: 80%;
+  margin-top: 0px;
+}
+
+.qNext {
+  width: 60px;
+  padding: 3px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--darkGrey);
+  background-color: var(--fontC);
+  border: 3px solid var(--mediumGrey);
+  border-radius: 5px;
+  font-size: var(--mediumTitle);
+  font-weight: var(--fontExtraThick);
+  /*transition: background-color.3s, color .3s;*/
+}
+
+.qNext:hover {
+  cursor: pointer;
+  /*background-color: var(--light);
+  border-color: #e4b157;*/
+}
+
+
+#qQuizImageBox {
+  flex-grow: 1;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.qAbsolute {
+  display: none;
+  width: 60vw;
+  max-width: 780px;
+  height: 45vh;
+  position: absolute;
+  background-color: var(--grey);
+  font-weight: var(--fontThick);
+}
+
+.qStartTitle {
+  font-size: var(--timeFont);
+}
+
+.qStart {
+  background-color: var(--red);
+  color: var(--fontC);
+  font-size: var(--buttonFont);
+  font-weight: var(--fontExtraThick);
+  width: 145px;
+  padding: 2px;
+  border: 3px solid var(--red);
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 40px;
+  transition: background-color.6s, color .6s;
+}
+
+.qStart:hover {
+  cursor: pointer;
+  background-color: var(--fontC);
+  color: var(--red);
+}
+
+.qOverTitle {
+  font-size: var(--overFont);
+  font-weight: var(--fontExtraThick);
+}
+
+.qYourScoreBox {
+  display: flex;
+  margin: 13px 0 0;
+  font-size: var(--mediumTitle);
+}
+
+.qYourScore {
+  margin-left: 5px;
+}
+
+.qNewHsBox {
+  margin: 30px 0 15px;
+  font-size: var(--mediumTitle);
+}
+
+.qNewHsCon {
+  font-weight: var(--fontExtraThick);
+  margin-right: 5px;
+}
+
+.qNewHs {
+  font-weight: var(--fontThin);
+}
+
+.qOverNameBox {
+  justify-content: center;
+  align-items: center;
+}
+
+.qOverName {
+  font-size: var(--mediumTitle);
+}
+
+.qOverNameBox input {
+  width: 120px;
+  padding: 5px;
+  margin: 0 5px;
+}
+
+.qOverButton {
+  background-color: var(--darkGrey);
+  color: var(--fontC);
+  padding: 3px 15px;
+  text-align: center;
+  border: 3px solid var(--mediumGrey);
+  border-radius: 5px;
+  font-size: var(--mediumTitle);
+  margin-top: 30px;
+  font-weight: var(--fontExtraThick);
+  transition: background-color.6s, color .6s;
+}
+
+.qOverButton:hover {
+  cursor: pointer;
+  background-color: var(--fontC);
+  color: var(--darkGrey);
+}
+
+.qDisable {
+  background-color: var(--bodyFluidBg);
+  color: var(--mediumGrey);
+}
+
+.qDisable:hover {
+  background-color: var(--bodyFluidBg);
+  color: var(--mediumGrey);
+}
+
+.qAnsweredContainer {
+  height: 25vh;
+  background-color: var(--darkGrey);
+}
+
+.qAnsWrapper {
+  flex-basis: 98%;
+  height: 60%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 10px;
+}
+
+.qAnsBox {
+  background-color: var(--grey);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid var(--mediumGrey);
+}
+
+.qAnsHero {
+  flex-basis: 70%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.qAnsSym {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.qSymbol {
+  height: 20px;
+  width: 20px;
+  background-color: var(--fontC);
+}
+
+.qCheckImg {
+  -webkit-clip-path: polygon(20% 30%, 0 45%, 30% 100%, 60% 100%, 100% 0, 75% 0, 45% 70%);
+          clip-path: polygon(20% 30%, 0 45%, 30% 100%, 60% 100%, 100% 0, 75% 0, 45% 70%);
+}
+
+.qWrongImg {
+  -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+          clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+.qCorrect {
+  transition: background-color .5s;
+  background-color: var(--green);
+}
+
+.qIncorrect {
+  transition: background-color .5s;
+  background-color: var(--red);
+}
+
+.qAnimationHS {
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+  -webkit-animation-name: highscore;
+          animation-name: highscore;
+}
+
+@-webkit-keyframes highscore {
+  0% { background-color: transparent;
+  box-shadow: transparent;}
+  50% { background-color: rgba(198,53,93,0.5);
+  box-shadow: 0px 0px 10px 	#f794af;}
+  100% { background-color: transparent;
+  box-shadow: transparent;}
+}
+
+@keyframes highscore {
+  0% { background-color: transparent;
+  box-shadow: transparent;}
+  50% { background-color: rgba(198,53,93,0.5);
+  box-shadow: 0px 0px 10px 	#f794af;}
+  100% { background-color: transparent;
+  box-shadow: transparent;}
+}

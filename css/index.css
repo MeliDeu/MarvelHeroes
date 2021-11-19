@@ -1,0 +1,615 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+nav {
+	box-sizing: content-box;
+}
+
+/* hela main med allt innehåll, storlekar för viewer mellan 900 och 1300*/
+#indexMain {
+	height: var(--mainH);
+	font-family: var(--fontF);
+	display: flex;
+	justify-content: center;
+	background-color: var(--bodyFluidBg);
+	width: 100%;
+}
+
+#indexWrapper {
+	position: relative;
+	max-width: 1300px;
+	display: grid;
+	grid-template-columns: 40% 10% 10% 40%;
+	grid-template-rows: 60vh 5vh calc(var(--mainH) - 60vh - 5vh);
+	overflow-x: hidden;
+}
+
+#indexBackgroundDark {
+	grid-area: 1/1/3/3;
+	background-size: cover;
+}
+
+#indexTextLeft {
+	grid-area: 1/1/2/2;
+	color: var(--fontC);
+	padding: 1vh 4vh 1vh 10vh;
+}
+
+#indexTextLeft a {
+	text-decoration: none;
+	color: var(--fontC);
+	background-color: var(--red);
+	width: 170px;
+	font-weight: bold;
+	flex-basis: 9%;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 22px;
+}
+
+#indexTextLeft h1 {
+	margin-bottom: 1vh;
+}
+
+#indexTextRight h2 {
+	margin-bottom: 1vh;
+}
+
+#indexTextRight p {
+	margin-top: 1vh;
+}
+
+#indexTextLeft p,
+#indexTextLeft h2 {
+	margin-bottom: 3vh;
+}
+
+.indexTextBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* Marvel-logotyp i textBoxen */
+#indexRightBildOText img {
+	height: 3vw;
+}
+
+#indexRightBildOText {
+	display: flex;
+	align-items: center;
+}
+
+#indexRightBildOText h1 {
+	font-size: 4vw;
+	margin-left: 2%;
+}
+
+#indexBackgroundLight {
+	grid-area: 1/3/3/5;
+	background-color: var(--fontC);
+}
+
+#indexTextRight {
+	grid-area: 1/3/2/5;
+	padding: 1vh 10vh 1vh 17vh;
+}
+
+#indexMainCarousel {
+	grid-area: 2/1/4/5;
+}
+
+#indexSpidey {
+	position: absolute;
+	left: 50.3%;
+	transform: translate(-50%);
+	-webkit-transform: translate(-50%);
+	-moz-transform: translate(-50%);
+	-ms-transform: translate(-50%);
+	-o-transform: translate(-50%);
+	animation: comingDown 2s ease-in-out;
+	-webkit-animation: comingDown 2s ease-in-out;
+	transition: top .5s;
+	-webkit-transition: top .5s;
+	-moz-transition: top .5s;
+	-ms-transition: top .5s;
+	-o-transition: top .5s;
+}
+
+#indexSpidey img {
+	height: var(--spideyHeight);
+	transform: rotate(-3deg);
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+}
+
+/* animation för att få ner spidey på indexsidan */
+@-webkit-keyframes comingDown {
+	0% {
+		top: -50vh;
+	}
+
+	70% {
+		top: 6vh;
+	}
+
+	90% {
+		top: -2vh;
+	}
+
+	100% {
+		top: 0;
+	}
+}
+
+@keyframes comingDown {
+	0% {
+		top: -50vh;
+	}
+
+	70% {
+		top: 6vh;
+	}
+
+	90% {
+		top: -2vh;
+	}
+
+	100% {
+		top: 0;
+	}
+}
+
+/* -------------------------------------------------------------------------Carousel------------------------------------------------------------------------------------------------- */
+
+/* yttre container som gömmer all overflow, ramen alltså */
+#indexMainCarousel {
+	overflow-x: hidden;
+	overflow-y: hidden;
+	position: relative;
+}
+
+/* den diven som innehåller alla kort som flyttas när man klickar sig vidare i carouselen */
+#carContainer {
+	display: flex;
+	width: 300vw;
+	height: 100%;
+	position: relative;
+	transition: margin-left 1.5s;
+	-webkit-transition: margin-left 1.5s;
+	-moz-transition: margin-left 1.5s;
+	-ms-transition: margin-left 1.5s;
+	-o-transition: margin-left 1.5s;
+	position: absolute;
+}
+
+/* carousel-controls med svg-filerna */
+#carCtrls {
+	position: absolute;
+	height: 2vh;
+	width: 100vw;
+	bottom: 1vh;
+	display: flex;
+	justify-content: center;
+}
+
+#carCtrls>div {
+	flex-basis: 10%;
+	display: flex;
+	justify-content: space-between;
+}
+
+#carCtrls svg {
+	height: 100%;
+}
+
+#carCtrls svg:hover {
+	cursor: pointer;
+}
+
+.carControls {
+	fill: lightgrey;
+}
+
+svg:nth-of-type(2) .circle {
+	fill: grey;
+}
+
+/* carousel-cards */
+.carSlidesCards {
+	display: flex;
+	overflow: hidden;
+	color: var(--fontC);
+	position: relative;
+	top: 10%;
+	margin-left: -1px;
+	height: 115%;
+}
+
+/*eftersom korten är sneda måste första och sista få annorlunda width och margin för att sträcka sig ut över ramens kant*/
+@media (min-width: 901px) AND (max-width: 1300px) {
+	#carContainer a:last-of-type .carSlidesCards {
+		width: 31vw;
+		margin-right: -6vw;
+	}
+
+	#carContainer a:first-of-type .carSlidesCards {
+		width: 34vw;
+		padding: 10px 0 0 43px;
+		margin-left: -66px;
+	}
+
+	#carContainer a:first-of-type .carName {
+		left: 8.5vw;
+	}
+}
+
+.carBild img {
+	width: 70%;
+}
+
+/*namnet i svart låda i mobilversion*/
+.mobileName {
+	display: none;
+	background-color: rgba(0, 0, 0, .7);
+	position: absolute;
+	bottom: -1px;
+	left: -2%;
+	width: 100%;
+	height: 20%;
+	transform: skewX(10deg);
+	-webkit-transform: skewX(10deg);
+	-moz-transform: skewX(10deg);
+	-ms-transform: skewX(10deg);
+	-o-transform: skewX(10deg);
+	padding: 0 20%;
+	align-items: center;
+}
+
+#carContainer a:first-of-type .mobileName {
+	padding: 0 25%;
+}
+
+/*divarna som innehåller karaktärens namn och bild*/
+.carName,
+.carBild {
+	transform: skewX(10deg);
+	-webkit-transform: skewX(10deg);
+	-moz-transform: skewX(10deg);
+	-ms-transform: skewX(10deg);
+	-o-transform: skewX(10deg);
+}
+
+.carName {
+	transform-origin: 0% -62%;
+	position: absolute;
+	top: 7vh;
+	left: 1.5vw;
+	z-index: 5;
+}
+
+.carName h2 {
+	margin-top: 1vh;
+	font-size: 2.3vw;
+}
+
+/* flytta in realName på korten */
+.carName h5 {
+	margin-left: 2vh;
+}
+
+/* flytta in andra raden av h2 på korten */
+.carName h2:nth-of-type(2) {
+	margin-left: 3vh;
+}
+
+.carBild {
+	transform-origin: 0 -170%;
+}
+
+.carSlidesCards:hover {
+	top: 0;
+}
+
+#carContainer a {
+	transform: skewX(-10deg);
+	flex-basis: 25vw;
+	position: relative;
+	left: -2.55vw;
+	height: 100%;
+}
+
+#indexTextLeft a:hover {
+	background-color: white;
+	color: var(--red);
+	border: 3px solid var(--red);
+	transition: background-color.6s, color .6s;
+	-webkit-transition: background-color.6s, color .6s;
+	-moz-transition: background-color.6s, color .6s;
+	-ms-transition: background-color.6s, color .6s;
+	-o-transition: background-color.6s, color .6s;
+}
+
+
+/* -------------------------------------------------------------------------------------över 1300px------------------------------------------------------------------------------------- */
+@media (min-width: 1300px) {
+	#carContainer {
+		width: 3900px;
+	}
+
+	.carSlidesCards {
+		width: 326px;
+	}
+
+	#carContainer a:last-of-type .carSlidesCards {
+		width: 400px;
+		padding: 10px 50px 0 0;
+		margin-right: -74px;
+	}
+
+	#carContainer a:last-of-type .carBild {
+		transform-origin: 0 -240%;
+	}
+
+	#carContainer a:first-of-type .carSlidesCards {
+		width: 400px;
+		padding: 10px 0 0 43px;
+		margin-left: -66px;
+	}
+
+	#carContainer a:first-of-type .carName {
+		left: 90px;
+	}
+
+	#carContainer a {
+		left: -1.55vw;
+	}
+
+	.carName {
+		transform-origin: 0% -62%;
+		position: absolute;
+		top: 7vh;
+		left: 1.5vw;
+	}
+
+	.carName h2 {
+		margin-top: 1vh;
+		font-size: 3vh;
+	}
+
+	#carCtrls {
+		width: 1300px;
+	}
+
+	#indexTextLeft a {
+		width: 40%;
+		font-size: 22px;
+	}
+
+	#indexRightBildOText img {
+		height: 5vh;
+	}
+
+	#indexRightBildOText h1 {
+		font-size: 6vh;
+		margin-left: 5px;
+	}
+}
+
+/* ----------------------------------------------------------------------------------mobil under 900px----------------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+	p {
+		font-size: 3vw;
+	}
+
+	#indexTextRight p {
+		margin-top: 1vw;
+	}
+
+	#indexRightBildOText h1 {
+		font-size: 8vw;
+	}
+
+	#indexTextLeft h2 {
+		margin-bottom: 4vw;
+		font-size: 3vw;
+	}
+
+	#indexTextLeft h1 {
+		margin-bottom: 4vw;
+		font-size: 9vw;
+	}
+
+	#indexTextRight h2 {
+		margin-bottom: 2vw;
+		font-size: 4vw;
+	}
+
+	#indexRightBildOText img {
+		height: 7vw;
+	}
+
+	#indexMain {
+		height: auto;
+	}
+
+	#indexWrapper {
+		grid-template-columns: 80vw 20vw;
+		grid-template-rows: 70vw 70vw 40vw;
+	}
+
+	#indexBackgroundDark {
+		grid-area: 2/1/3/3;
+	}
+
+	#indexBackgroundLight {
+		grid-area: 1/1/2/3;
+	}
+
+	#indexTextLeft {
+		grid-area: 2/1/3/3;
+		padding: 5vw 3vw 5vw 5vw;
+	}
+
+	#indexTextLeft p,
+	#indexTextLeft h2 {
+		margin-bottom: 3vw;
+	}
+
+	#indexTextLeft a {
+		font-size: 5vw;
+		width: 40vw;
+		flex-basis: 9vw;
+	}
+
+	#indexTextRight {
+		grid-area: 1/1/2/3;
+		padding: 5vw 3vw 5vw 5vw;
+		display: grid;
+		grid-template-columns: 70% 30%;
+	}
+
+	#indexTextRight h2 {
+		grid-area: 1/1/2/2;
+		margin-bottom: -2vw;
+	}
+
+	#indexRightBildOText {
+		grid-area: 2/1/3/2;
+	}
+
+	p:nth-of-type(1).indexRightTextItem {
+		grid-area: 3/1/4/2;
+	}
+
+	p:nth-of-type(2).indexRightTextItem {
+		grid-area: 4/1/5/3;
+	}
+
+	#indexSpidey {
+		left: 83vw;
+		top: -5vw;
+	}
+
+	#indexSpidey img {
+		height: 45vw;
+	}
+
+	#indexMainCarousel {
+		grid-area: 3/1/4/3;
+	}
+
+	#carContainer {
+		width: 600vw;
+	}
+
+	#carContainer a {
+		flex-basis: 50vw;
+	}
+
+	@-webkit-keyframes comingDown {
+		0% {
+			top: -50vh;
+		}
+
+		70% {
+			top: 0;
+		}
+
+		90% {
+			top: -10vw;
+		}
+
+		100% {
+			top: -5vw;
+		}
+	}
+
+	@keyframes comingDown {
+		0% {
+			top: -50vh;
+		}
+
+		70% {
+			top: 0;
+		}
+
+		90% {
+			top: -10vw;
+		}
+
+		100% {
+			top: -5vw;
+		}
+	}
+
+	.carSlidesCards {
+		top: 0;
+		margin-left: -3vw;
+		height: 100%;
+		width: 54vw;
+	}
+
+	.mobileName {
+		display: flex;
+	}
+
+	.carBild {
+		transform-origin: 0 0;
+	}
+
+	.carBild img {
+		width: 100%;
+	}
+
+	.carName {
+		display: none;
+	}
+
+	.circle {
+		display: none;
+	}
+
+	#carCtrls svg {
+		position: absolute;
+		height: 15vw;
+	}
+
+	#carFor,
+	#carBack {
+		bottom: 50%;
+		transform: translate(0, 50%);
+		-webkit-transform: translate(0, 50%);
+		-moz-transform: translate(0, 50%);
+		-ms-transform: translate(0, 50%);
+		-o-transform: translate(0, 50%);
+	}
+
+	#carFor {
+		right: 2vw;
+	}
+
+	#carBack {
+		left: 2vw;
+	}
+
+	#carCtrls {
+		position: static;
+	}
+
+	#carCtrls div {
+		justify-content: space-between;
+		width: 100vw;
+	}
+}
